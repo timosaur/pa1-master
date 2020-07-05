@@ -44,6 +44,12 @@ public class BasketTest {
 		}
 		return null;
 	}
+
+	@Test
+	public void addedHasCount0() {
+		Basket basketToTest = makeBasket();
+		assertEquals(0, basketToTest.count());
+	}
 	
 	@Test
 	public void addedHasCount1() {

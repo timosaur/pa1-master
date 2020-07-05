@@ -50,7 +50,7 @@ public class BasketTest {
 		Basket basketToTest = makeBasket();
 		assertEquals(0, basketToTest.count());
 	}
-	
+
 	@Test
 	public void addedHasCount1() {
 		Basket basketToTest = makeBasket();
@@ -59,5 +59,29 @@ public class BasketTest {
 		basketToTest.addToBasket(i);
 		assertEquals(1, basketToTest.count());
 	}
+
+	@Test
+	public void addedDupAsCountItem3() {
+		Basket basketToTest = makeBasket();
+
+		Item i = new Item("Shampoo", 5);
+		Item j = new Item("Shampoo", 5);
+		Item k = new Item("Shampoo", 5);
+		basketToTest.addToBasket(i);
+		basketToTest.addToBasket(j);
+		basketToTest.addToBasket(k);
+		assertEquals(3, basketToTest.countItem(i));
+	}
+	@Test
+	public void over1000Items() {
+		Basket basketToTest = makeBasket();
+
+		Item i = new Item("Shampoo", 5);
+		for(int k =0;k<1001;k++){
+			basketToTest.addToBasket(i);
+		}
+		assertEquals(1001, basketToTest.count());
+	}
+
 
 }

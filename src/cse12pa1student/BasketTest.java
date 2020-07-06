@@ -58,6 +58,7 @@ public class BasketTest {
 		Item i = new Item("Shampoo", 5);
 		basketToTest.addToBasket(i);
 		assertEquals(1, basketToTest.count());
+		assertEquals(1, basketToTest.countItem(i));
 	}
 
 	@Test

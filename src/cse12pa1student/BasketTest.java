@@ -62,6 +62,22 @@ public class BasketTest {
 	}
 
 	@Test
+	public void addedPartialDupCounts() {
+		Basket basketToTest = makeBasket();
+
+		Item i = new Item("Shampoo", 5);
+		Item j = new Item("Shampoo", 5);
+		Item k = new Item("Soap", 4);
+		basketToTest.addToBasket(i);
+		basketToTest.addToBasket(j);
+		basketToTest.addToBasket(k);
+		assertEquals(3, basketToTest.count());
+		assertEquals(2, basketToTest.countItem(i));
+		assertEquals(2, basketToTest.countItem(j));
+		assertEquals(1, basketToTest.countItem(k));
+	}
+
+	@Test
 	public void addedDupHasCount3() {
 		Basket basketToTest = makeBasket();
 

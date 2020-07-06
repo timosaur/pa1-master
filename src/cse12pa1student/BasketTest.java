@@ -61,7 +61,7 @@ public class BasketTest {
 	}
 
 	@Test
-	public void addedDupAsCountItem3() {
+	public void addedDupHasCount3() {
 		Basket basketToTest = makeBasket();
 
 		Item i = new Item("Shampoo", 5);
@@ -70,8 +70,10 @@ public class BasketTest {
 		basketToTest.addToBasket(i);
 		basketToTest.addToBasket(j);
 		basketToTest.addToBasket(k);
+		assertEquals(3, basketToTest.count());
 		assertEquals(3, basketToTest.countItem(i));
 	}
+
 	@Test
 	public void over1000Items() {
 		Basket basketToTest = makeBasket();

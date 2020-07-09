@@ -63,14 +63,13 @@ public class Basket8 implements Basket {
                 }
                 return;
                 // So basically, if an item is found, move it to the next sublist
-                // Maybe this is to show how many times an item has added (the index j is how many times)
             }
         }
         // We reach this point only if item is brand new (has not been found)
         // Make sure the list has a sublist at index 1
         while(this.items.size() <= 1)
             this.items.add(new ArrayList<Item>());
-        // Add item to beginning, if item is new. This indicates that item has count 1 (index 1)
+        // Add item to beginning, if item is new
         this.items.get(1).add(i);
     }
 
